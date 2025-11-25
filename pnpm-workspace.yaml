@@ -1,0 +1,36 @@
+catalogMode: prefer
+shellEmulator: true
+trustPolicy: no-downgrade
+
+packages:
+  - .
+  - playground
+catalogs:
+  build:
+    '@vitejs/plugin-vue': ^6.0.2
+    tsdown: ^0.17.2
+    vite: ^7.2.7
+  cli:
+    bumpp: ^10.3.2
+    pncat: ^0.7.7
+    taze: ^19.9.2
+  dev:
+    happy-dom: ^20.0.11
+  lint:
+    '@antfu/eslint-config': ^6.5.1
+    eslint: ^9.39.1
+    lint-staged: ^16.2.7
+    simple-git-hooks: ^2.13.1
+  script:
+    tsx: ^4.21.0
+  test:
+    '@vue/test-utils': ^2.4.6
+    vitest: ^4.0.15
+  tsc:
+    typescript: ^5.9.3
+    vue-tsc: ^3.1.8
+  types:
+    '@types/node': ^24.10.2
+onlyBuiltDependencies:
+  - esbuild
+  - simple-git-hooks
