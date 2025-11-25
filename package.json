@@ -1,0 +1,65 @@
+{
+  "name": "lib-name",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.23.0",
+  "description": "Starter template for Vue Components.",
+  "author": "jinghaihan",
+  "license": "MIT",
+  "homepage": "https://github.com/jinghaihan/lib-name#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinghaihan/lib-name.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jinghaihan/lib-name/issues"
+  },
+  "keywords": [],
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsdown",
+    "deps": "taze major -I",
+    "lint": "eslint",
+    "typecheck": "vue-tsc --noEmit",
+    "test": "vitest",
+    "release": "bumpp",
+    "bootstrap": "pnpm install",
+    "prepare": "simple-git-hooks",
+    "prepublishOnly": "pnpm build"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:lint",
+    "@types/node": "catalog:types",
+    "@vitejs/plugin-vue": "catalog:build",
+    "@vue/test-utils": "catalog:test",
+    "bumpp": "catalog:cli",
+    "eslint": "catalog:lint",
+    "happy-dom": "catalog:dev",
+    "lint-staged": "catalog:lint",
+    "pncat": "catalog:cli",
+    "simple-git-hooks": "catalog:lint",
+    "taze": "catalog:cli",
+    "tsdown": "catalog:build",
+    "tsx": "catalog:script",
+    "typescript": "catalog:tsc",
+    "vite": "catalog:build",
+    "vitest": "catalog:test",
+    "vue-tsc": "catalog:tsc"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
